@@ -16,11 +16,9 @@ return new class extends Migration
         Schema::create('book_category', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')
-                ->onDelete('restrict');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('restrict');
             $table->unsignedBigInteger('book_id');
-            $table->foreign('book_id')->references('id')->on('books')->onUpdate('cascade')
-                ->onDelete('restrict');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('restrict');
             $table->timestamps();
         });
     }

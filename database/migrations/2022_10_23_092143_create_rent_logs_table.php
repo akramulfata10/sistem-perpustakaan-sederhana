@@ -16,14 +16,12 @@ return new class extends Migration
         Schema::create('rent_logs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')
-                ->onDelete('restrict');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             $table->unsignedBigInteger('book_id');
-            $table->foreign('book_id')->references('id')->on('books')->onUpdate('cascade')
-                ->onDelete('restrict');
-            $table->date('rent_date');
-            $table->date('return_date');
-            $table->date('actual_return_date');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('restrict');
+            $table->date('waktu_pinjam');
+            $table->date('waktu_kembalikan');
+            $table->date('waktu_pasti_kembalikan');
             $table->timestamps();
         });
     }
