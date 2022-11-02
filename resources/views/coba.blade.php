@@ -11,6 +11,7 @@
     <h1>akramul fata</h1>
     <h1>amanda fauza</h1>
     <h1>adilah fika</h1>
+    loremmmmmmmmmmmm
 </body>
 </html>
 
