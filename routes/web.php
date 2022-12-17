@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [FrontController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
+    Route::resource('books', App\Http\Controllers\Admin\BookController::class);
+    Route::resource('category', App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('rentlog', App\Http\Controllers\Admin\RentlogController::class);
+});

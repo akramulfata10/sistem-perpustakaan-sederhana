@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rent_logs', function (Blueprint $table) {
+        Schema::create('rentlogs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
-            $table->unsignedBigInteger('book_id');
-            $table->foreign('book_id')->references('id')->on('books')->onDelete('restrict');
+            $table->foreignId('book_id');
+            // $table->boolean('status')->nullable()->default(false);
             $table->date('waktu_pinjam');
             $table->date('waktu_kembalikan');
             $table->date('waktu_pasti_kembalikan');
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rent_logs');
+        Schema::dropIfExists('rentlogs');
     }
 };
