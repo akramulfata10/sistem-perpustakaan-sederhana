@@ -30,3 +30,6 @@ Route::prefix('operator')->middleware(['auth', 'isOperator'])->group(function ()
     Route::get('/dashboard', [App\Http\Controllers\Operator\DashboardController::class, 'index']);
     Route::resource('rentlog', App\Http\Controllers\Admin\RentlogController::class);
 });
+
+// pr malam ini
+// fungsi datediff() di laravel
