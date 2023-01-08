@@ -14,12 +14,12 @@
                 @endif
                 <div class="card-header">
                     <h4>Create Peminjaman
-                        <a href="{{ url('admin/rentlog') }}" class="btn btn-primary btn-sm float-end">
+                        <a href="{{ url('operator/rentlog') }}" class="btn btn-primary btn-sm float-end">
                             Back to peminjaman</a>
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('admin/rentlog') }}" method="POST">
+                    <form action="{{ url('operator/rentlog') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="Book" class="form-label">Book Name</label>
