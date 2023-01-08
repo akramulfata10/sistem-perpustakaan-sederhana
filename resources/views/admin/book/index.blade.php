@@ -28,7 +28,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $book->title }}</td>
-                                    <td>{{ $book->category->name }}</td>
+                                    <td>{{ $book->category->name ?? 'None' }}</td>
                                     <td>{{ $book->status }}</td>
                                     <td>
                                         <a href="/admin/books/{{ $book->id }}/edit"

@@ -12,6 +12,6 @@ class Category extends Model {
 
     public function books() {
         return $this->hasMany(Book::class);
-        //satu category bisa saja dimilik oleh banyak Books
+        //satu category bisa saja dimilik oleh banyak post
     }
 }
