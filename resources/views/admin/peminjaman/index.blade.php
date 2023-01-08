@@ -8,7 +8,7 @@
                 @endif
                 <div class="card-header">
                     <h4>Halaman Peminjaman
-                        <a href="{{ url('admin/rentlog/create') }}" class="btn btn-primary btn-sm float-end">Create to
+                        <a href="{{ url('operator/rentlog/create') }}" class="btn btn-primary btn-sm float-end">Create to
                             Peminjaman</a>
                     </h4>
                 </div>
@@ -28,15 +28,16 @@
                             @foreach ($rentlogs as $rentlog)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $rentlog->book->title }}</td>
+                                    <td>{{ $rentlog->book->title ?? 'None' }}</td>
                                     <td>{{ $rentlog->waktu_pinjam }}</td>
                                     <td>{{ $rentlog->waktu_kembalikan }}</td>
                                     <td>{{ $rentlog->waktu_pasti_kembalikan }}</td>
                                     <td>
-                                        <a href="/admin/rentlog/{{ $rentlog->id }}/edit"
+                                        <a href="/operator/rentlog/{{ $rentlog->id }}/edit"
                                             class="badge bg-warning text-decoration-none"><span data-feather="edit">
                                                 Edit</span></a>
-                                        <form action="/admin/rentlog/{{ $rentlog->id }}" method="POST" class="d-inline">
+                                        <form action="/operator/rentlog/{{ $rentlog->id }}" method="POST"
+                                            class="d-inline">
                                             @method('delete')
                                             @csrf
                                             <button class="badge bg-danger border-0"

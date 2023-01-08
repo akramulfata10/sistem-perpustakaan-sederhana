@@ -21,8 +21,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
     Route::resource('books', App\Http\Controllers\Admin\BookController::class);
     Route::resource('category', App\Http\Controllers\Admin\CategoryController::class);
+    // Route::resource('rentlog', App\Http\Controllers\Admin\RentlogController::class);
+});
+Route::prefix('operator')->middleware(['auth', 'isOperator'])->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\Operator\DashboardController::class, 'index']);
     Route::resource('rentlog', App\Http\Controllers\Admin\RentlogController::class);
 });
