@@ -37,11 +37,15 @@ class RentlogController extends Controller {
     public function store(Request $request) {
         $validatedData = $request->validate([
             'book_id' => 'required',
+            'name_peminjam' => 'required|max:255',
+            'status' => 'nullable',
             'waktu_pinjam' => 'required',
             'waktu_kembalikan' => 'required',
             'waktu_pasti_kembalikan' => 'required',
         ]);
         $validateData['book_id'] = $request->book_id;
+        $validateData['name_peminjam'] = $request->name_peminjam;
+        $validateData['status'] = $request->status == true ? '1' : '0';
         $validateData['waktu_pinjam'] = $request->waktu_pinjam;
         $validateData['waktu_kembalikan'] = $request->waktu_kembalikan;
         $validateData['waktu_pasti_kembalikan'] = $request->waktu_pasti_kembalikan;
@@ -82,11 +86,15 @@ class RentlogController extends Controller {
     public function update(Request $request, Rentlog $rentlog) {
         $validatedData = $request->validate([
             'book_id' => 'required',
+            'name_peminjam' => 'required|max:255',
+            'status' => 'nullable',
             'waktu_pinjam' => 'required',
             'waktu_kembalikan' => 'required',
             'waktu_pasti_kembalikan' => 'required',
         ]);
         $validateData['book_id'] = $request->book_id;
+        $validateData['name_peminjam'] = $request->name_peminjam;
+        $validateData['status'] = $request->status == true ? '1' : '0';
         $validateData['waktu_pinjam'] = $request->waktu_pinjam;
         $validateData['waktu_kembalikan'] = $request->waktu_kembalikan;
         $validateData['waktu_pasti_kembalikan'] = $request->waktu_pasti_kembalikan;
