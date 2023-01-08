@@ -18,6 +18,8 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Nama Buku</th>
+                                <th scope="col">Nama Peminjam</th>
+                                <th scope="col">Keterangan</th>
                                 <th scope="col">Waktu Peminjaman</th>
                                 <th scope="col">waktu Kembalikan</th>
                                 <th scope="col">waktu pasti kembalikan </th>
@@ -29,6 +31,8 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $rentlog->book->title ?? 'None' }}</td>
+                                    <td>{{ $rentlog->name_peminjam }}</td>
+                                    <td>{{ $rentlog->status == '1' ? 'dikembalikan' : 'dipinjam' }}</td>
                                     <td>{{ $rentlog->waktu_pinjam }}</td>
                                     <td>{{ $rentlog->waktu_kembalikan }}</td>
                                     <td>{{ $rentlog->waktu_pasti_kembalikan }}</td>
