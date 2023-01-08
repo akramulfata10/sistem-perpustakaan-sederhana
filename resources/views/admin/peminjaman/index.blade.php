@@ -32,7 +32,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $rentlog->book->title ?? 'None' }}</td>
                                     <td>{{ $rentlog->name_peminjam }}</td>
-                                    <td>{{ $rentlog->status == '1' ? 'sudah' : 'belum' }}</td>
+                                    <td>{{ $rentlog->status == '1' ? 'dikembalikan' : 'dipinjam' }}</td>
                                     <td>{{ $rentlog->waktu_pinjam }}</td>
                                     <td>{{ $rentlog->waktu_kembalikan }}</td>
                                     <td>{{ $rentlog->waktu_pasti_kembalikan }}</td>

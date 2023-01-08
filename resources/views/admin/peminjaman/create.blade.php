@@ -66,7 +66,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="">Status</label>
-                            <input type="checkbox" name="status"> checked=sudah, non-checked=belum
+                            <input type="checkbox" name="status"> checked=dikembalikan, non-checked=dipinjam
                             @error('status')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

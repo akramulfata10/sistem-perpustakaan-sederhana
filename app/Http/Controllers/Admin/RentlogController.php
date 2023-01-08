@@ -37,8 +37,8 @@ class RentlogController extends Controller {
     public function store(Request $request) {
         $validatedData = $request->validate([
             'book_id' => 'required',
-            'name_peminjam' => 'required|unique:rentlogs|max:255',
-            'status' => 'required',
+            'name_peminjam' => 'required|max:255',
+            'status' => 'nullable',
             'waktu_pinjam' => 'required',
             'waktu_kembalikan' => 'required',
             'waktu_pasti_kembalikan' => 'required',
@@ -86,8 +86,8 @@ class RentlogController extends Controller {
     public function update(Request $request, Rentlog $rentlog) {
         $validatedData = $request->validate([
             'book_id' => 'required',
-            'name_peminjam' => 'required|unique:rentlogs|max:255',
-            'status' => 'required',
+            'name_peminjam' => 'required|max:255',
+            'status' => 'nullable',
             'waktu_pinjam' => 'required',
             'waktu_kembalikan' => 'required',
             'waktu_pasti_kembalikan' => 'required',
