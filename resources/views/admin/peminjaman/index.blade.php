@@ -19,7 +19,7 @@
                                 <th scope="col">No</th>
                                 <th scope="col">Nama Buku</th>
                                 <th scope="col">Nama Peminjam</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Keterangan</th>
                                 <th scope="col">Waktu Peminjaman</th>
                                 <th scope="col">waktu Kembalikan</th>
                                 <th scope="col">waktu pasti kembalikan </th>
