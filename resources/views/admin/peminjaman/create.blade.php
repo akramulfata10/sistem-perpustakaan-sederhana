@@ -33,6 +33,14 @@
                             @enderror
                         </div>
                         <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Name Peminjam</label>
+                            <input type="text" name="name_peminjam" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name_peminjam">
+                            @error('name_peminjam')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Waktu Pinjam</label>
                             <input type="date" name="waktu_pinjam" class="form-control" id="exampleFormControlInput1"
                                 placeholder="waktu_pinjam">
@@ -53,6 +61,13 @@
                             <input type="date" name="waktu_pasti_kembalikan" class="form-control"
                                 id="exampleFormControlInput1" placeholder="waktu_pasti_kembalikan">
                             @error('waktu_pasti_kembalikan')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Status</label>
+                            <input type="checkbox" name="status"> checked=sudah, non-checked=belum
+                            @error('status')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
